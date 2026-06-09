@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="Tetris.css">
+</head>
+<body>
+    <main class="app-container">
+        <header class="app-header">
+            <h1>TETRIS</h1>
+        </header>
+
+        <div class="game-section">
+            <div class="board-wrapper">
+                <div class="board-frame">
+                    <canvas id="tetris" class="board"></canvas>
+                    <div id="gameOverOverlay" class="game-over">
+                        <div class="game-over-panel">
+                            <h2>Game Over</h2>
+                            <button id="try-again">Try Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="stats-compact">
+                    <div class="stat-badge"><span class="label">Score</span><span class="value" id="score">0</span></div>
+                    <div class="stat-badge"><span class="label">Lines</span><span class="value" id="lines">0</span></div>
+                    <div class="stat-badge"><span class="label">Lvl</span><span class="value" id="level">0</span></div>
+                </div>
+
+                <div class="preview-compact">
+                    <div class="preview-mini">
+                        <span>Next</span>
+                        <canvas id="next" width="60" height="60"></canvas>
+                    </div>
+                    <div class="preview-mini">
+                        <span>Hold</span>
+                        <canvas id="hold" width="60" height="60"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-mobile">
+            <div class="dpad-mini">
+                <button id="btn-up" class="btn-dir up">▲</button>
+                <div class="dpad-row">
+                    <button id="btn-left" class="btn-dir">◄</button>
+                    <button id="btn-down" class="btn-dir">▼</button>
+                    <button id="btn-right" class="btn-dir">►</button>
+                </div>
+            </div>
+            <div class="action-mini">
+                <button id="btn-a" class="btn-action">A</button>
+                <button id="btn-b" class="btn-action">B</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="action-bar">
+        <button id="start" class="btn-action-bar">Start</button>
+        <button id="pause" class="btn-action-bar secondary">Pause</button>
+        <button id="reset" class="btn-action-bar secondary">Reset</button>
+    </footer>
+
+    <script src="Tetris.js"></script>
+</body>
+</html>
