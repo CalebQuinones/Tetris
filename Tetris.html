@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="Tetris.css">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="app-header">
+            <h1>Tetris</h1>
+        </header>
+
+        <section class="game-layout">
+            <div class="board-column">
+                <div class="board-frame">
+                    <canvas id="tetris" class="board" aria-label="Tetris game board"></canvas>
+                    <div id="gameOverOverlay" class="game-over">
+                        <div class="game-over-panel">
+                            <h2>Game Over</h2>
+                            <p>Try again?</p>
+                            <button id="try-again">Try Again</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-controls">
+                    <div class="direction-pad">
+                        <button id="btn-up" class="direction">↑</button>
+                        <div class="direction-row">
+                            <button id="btn-left" class="direction">←</button>
+                            <button id="btn-down" class="direction">↓</button>
+                            <button id="btn-right" class="direction">→</button>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="btn-a" class="action">A</button>
+                        <button id="btn-b" class="action secondary">B</button>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="panel stats">
+                    <div class="panel-title">Stats</div>
+                    <div class="stats-item"><span>Score</span><span id="score">0</span></div>
+                    <div class="stats-item"><span>Lines</span><span id="lines">0</span></div>
+                    <div class="stats-item"><span>Level</span><span id="level">0</span></div>
+                </div>
+                <div class="panel preview">
+                    <div class="panel-title">Next / Hold</div>
+                    <div class="preview-grids">
+                        <div class="preview-card">
+                            <span>Next</span>
+                            <canvas id="next" width="80" height="80"></canvas>
+                        </div>
+                        <div class="preview-card">
+                            <span>Hold</span>
+                            <canvas id="hold" width="80" height="80"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel instructions">
+                    <div class="panel-title">Controls</div>
+                    <p>← / → : move</p>
+                    <p>↓ : soft drop</p>
+                    <p>↑ or A : rotate</p>
+                    <p>B : hold / switch</p>
+                    <p>P : pause / resume</p>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="bottom-bar">
+        <button id="start">Start</button>
+        <button id="pause" class="secondary">Pause</button>
+        <button id="reset" class="secondary">Reset</button>
+    </footer>
+
+    <script src="Tetris.js"></script>
+</body>
+</html>
